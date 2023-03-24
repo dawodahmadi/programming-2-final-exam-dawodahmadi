@@ -1,6 +1,7 @@
 package com.prog2.labs;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author adinashby
@@ -24,12 +25,14 @@ public class FinalExam {
 	 */
 	
     public static String intToRoman(int num) {
-      kfjldasjf
-              djsflkadjslkf
-              kjdaflkjaksldfj
-                        String result = "";
+      
         int[] values = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
         String[] romanNumeral = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+        StringBuilder sb = new StringBuilder();
+    for (int i = 0; i < values.length; i++) {
+        while (num >= values[i]) {
+            num -= values[i];
+            sb.append(romanNumeral[i]);
         
         
             
@@ -37,9 +40,36 @@ public class FinalExam {
     }
     return sb.toString();
 }
-        
+       private static final String[] LETTERS = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz","", "", "tuv", "wxyz"};
+
     
-    public static ArrayList<String> letterCombinations(String digits) {
-        return new ArrayList<>();
+    public ArrayList<String> letterCombinations(String digits) {
+        ArrayList<String> result = new ArrayList<>();
+
+        
+          if (digits == null || digits.isEmpty()) {
+            return result;
+        }
+
+        
+        generateCombinations(digits, 0, "", result);
+
+        
+        return result;
+    }  
+     
+    private void generateCombinations(String digits, int index, String current, List<String> result) {
+        
+        if (index == digits.length()) {
+            result.add(current);
+            return;
+        }
+
+        
+        String letters = LETTERS[digits.charAt(index) - '0'];
+        for (char c : letters.toCharArray()) {
+           
+            generateCombinations(digits, index + 1, current + c, result);
+        }
     }
 }

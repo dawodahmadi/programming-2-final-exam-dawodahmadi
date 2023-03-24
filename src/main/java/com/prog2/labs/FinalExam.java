@@ -14,6 +14,8 @@ public class FinalExam {
 	 *
 	 */
 	public static void main(String[] args) {
+            
+            System.out.print(FinalExam.intToRoman(58));
 
 	}
 
@@ -22,8 +24,20 @@ public class FinalExam {
 	 */
 	
     public static String intToRoman(int num) {
-        return "";
+      kfjldasjf
+              djsflkadjslkf
+              kjdaflkjaksldfj
+                        String result = "";
+        int[] values = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+        String[] romanNumeral = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+        
+        
+            
+        }
     }
+    return sb.toString();
+}
+        
     
     public static ArrayList<String> letterCombinations(String digits) {
         return new ArrayList<>();
